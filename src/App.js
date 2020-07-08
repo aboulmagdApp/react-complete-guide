@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
+import person from './Person/Person';
 
 class App extends Component {
   state = {
@@ -48,14 +49,12 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer'
     }
-    return (
-      <div className="App">
-        <h1>Hi I'm a react app</h1>
-        <button
-          style={style}
-          onClick={this.togglePersonsHandler}>Toggle Persons</button>
-        { this.state.showPersons ?
-          <div>
+
+    let persons = null;
+
+    if(this.state.showPersons){
+      persons = (
+        <div>
             <Person
               name={this.state.persons[0].name}
               age={this.state.persons[0].age}
@@ -73,8 +72,17 @@ class App extends Component {
               age={this.state.persons[2].age}
               currentName={this.state.persons[2].name}>
             </Person>
-          </div> : null
-        }
+          </div> 
+      )
+    }
+
+    return (
+      <div className="App">
+        <h1>Hi I'm a react app</h1>
+        <button
+          style={style}
+          onClick={this.togglePersonsHandler}>Toggle Persons</button>
+          {persons}
       </div>
     );
   }
