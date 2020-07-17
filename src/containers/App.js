@@ -34,6 +34,15 @@ class App extends Component {
     console.log('[App.js] componentDidMount');
   }
 
+  shouldComponentUpdate(){
+    console.log('[App.js] shouldComponentUpdate');
+    return true;
+  }
+
+  componentDidUpdate(){
+    console.log('[App.js] componentDidUpdate');
+  }
+
   // switchNameHandeler = () => {
   //   //console.log('Was clicked');
   //   this.setState({
