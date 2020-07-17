@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import classes from './Cockpit.css'
+import classes from './Cockpit.css';
 
 const Cockpit = (props) => {
     // we use react hook useEffect with empty array to run code inside only when once when load
@@ -9,6 +9,7 @@ const Cockpit = (props) => {
         setTimeout(() => {
             alert('saved data to cloud');
         }, 1000);
+        
     },[]);
 
     let assignedClasses = [];
