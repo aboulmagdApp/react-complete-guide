@@ -2,9 +2,14 @@ import React, { useEffect } from 'react';
 import classes from './Cockpit.css'
 
 const Cockpit = (props) => {
+    // we use react hook useEffect with empty array to run code inside only when once when load
+    // or if we put arry will run code every change in array
     useEffect(() =>{
         console.log('[Cockpit.js] useEffect');
-    });
+        setTimeout(() => {
+            alert('saved data to cloud');
+        }, 1000);
+    },[]);
 
     let assignedClasses = [];
     let btnClass = '';
